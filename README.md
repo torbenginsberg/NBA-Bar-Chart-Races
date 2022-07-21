@@ -22,6 +22,8 @@ In addition, this project will include:
 
 ## Wireframe
 
+https://wireframe.cc/23piDp
+
 ## Technologies, Libraries & APIs
 
 As of now, this project will use the D3.js library. A number of specific subsets will be used, and will be included here as the project progresses.
@@ -45,3 +47,8 @@ Wednesday
 
 Thursday Morning
     - Final touches and deploy to Github Pages / Heroku
+
+## Bonus Features
+
+    - Image display of the player at the top of the list once the progression finishes
+
