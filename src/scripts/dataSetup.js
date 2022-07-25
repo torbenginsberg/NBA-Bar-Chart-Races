@@ -1,6 +1,6 @@
 const fs = require('fs'); // inbuilt method used to read a file into buffer; File System Module
 
-csv = fs.readFileSync('../../file/points.csv');
+csv = fs.readFileSync('../../files/points.csv');
 
 const array = csv.toString().split('\n');
 const convertedArr = [];
@@ -56,4 +56,4 @@ function compounder(arr) {
 }
 
 compoundValues(dataset);
-console.log(dataset);
+// console.log(dataset[2179]);
