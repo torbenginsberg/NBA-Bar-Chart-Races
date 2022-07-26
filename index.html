@@ -3,41 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./dist/main.css" />
+    <script src="./dist/main.js"></script>
     <title>NBA Bar Chart Races</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-      }
-      .chartMenu {
-        width: 100vw;
-        height: 40px;
-        background: #C9082A;
-        color: #C9082A;
-      }
-      .chartMenu p {
-        padding: 10px;
-        font-size: 20px;
-      }
-      .chartCard {
-        width: 100vw;
-        height: calc(100vh - 40px);
-        background: rgba(23, 64, 139);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .chartBox {
-        width: 700px;
-        padding: 20px;
-        border-radius: 20px;
-        border-color: #C9082A;
-        background: white;
-      }
-    </style>
   </head>
   <body>
+    <div class="search-wrapper">
+      <label for="search">Search Players</label>
+      <input type="search" id="search">
+    </div>
+    <div class="player-cards">
+      <div class="card">
+        <div class="header">Player Name</div>
+        <div class="body">Player Team</div>
+      </div>
+    </div>
+
     <div class="chartCard">
       <div class="chartBox">
         <canvas id="myChart"></canvas>
@@ -46,12 +27,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
  
-    const labels = ['LeBron', 'KD', 'Kawhi', 'Luka', 'Jokic', 'Embiid', 'AD'];
+    const labels = ['LeBron James', 'Kevin Durant', 'Kawhi Leonard', 'Luka Doncic', 'Nikola Jokic', 'Joel Embiid', 'Anthony Davis', 'LaMelo Ball'];
     const data = {
-      labels: ['LeBron', 'KD', 'Kawhi', 'Luka', 'Jokic', 'Embiid', 'AD'],
+      labels: ['LeBron James', 'Kevin Durant', 'Kawhi Leonard', 'Luka Doncic', 'Nikola Jokic', 'Joel Embiid', 'Anthony Davis', 'LaMelo Ball'],
       datasets: [{
         label: 'Points Scored',
-        data: [25000, 20000, 18000, 16000, 22000, 24000, 14000], //need to parse my CSV for data
+        data: [25000, 20000, 18000, 16000, 22000, 24000, 14000, 9500], //need to parse my CSV for data
         backgroundColor: [
           '#860038',
           '#000000',
@@ -59,7 +40,8 @@
           '#00538C',
           '#0E2240',
           '#006BB6',
-          '#552583'
+          '#552583',
+          '#1d1160'
         ],
         borderColor: [
           '#041E42',
@@ -68,9 +50,10 @@
           '#002B5E',
           '#FEC524',
           '#ED174C',
-          '#FDB927'
+          '#FDB927',
+          '00788c'
         ],
-        borderWidth: 1
+        borderWidth: 2
       }]
     };
 
@@ -125,7 +108,7 @@
         myChart.config.data.datasets[0].borderColor = bc;
 
         myChart.update();
-    }, 2000);
+    }, 1000);
     </script>
 
   </body>

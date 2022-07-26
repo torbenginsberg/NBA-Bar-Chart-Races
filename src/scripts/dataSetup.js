@@ -1,35 +1,37 @@
 const fs = require('fs'); // inbuilt method used to read a file into buffer; File System Module
 
-csv = fs.readFileSync('../../files/points.csv');
-
-const array = csv.toString().split('\n');
-const convertedArr = [];
-
-let dataset = [];
-
-for(let i = 1; i < array.length; i++) {
-    const jsObject = {};
-
-    const current = array[i];
-    let elements = current.split(',');
-    let dateString = elements[0];
-    let nameString = elements[1];
-    let teamString = elements[2];
-    let valueString = elements[3];
-
-    jsObject['date'] = stringToDate(dateString);
-    jsObject['name'] = nameString;
-    jsObject['team'] = teamString;
-    jsObject['value'] = parseInt(valueString);
-
-    dataset.push(jsObject);
+const csvToObjects = (csv) => {
+    csv = fs.readFileSync('../../files/points.csv');
+    const array = csv.toString().split('\n');
+    const convertedArr = [];
+    
+    let dataset = [];
+    
+    for(let i = 1; i < array.length; i++) {
+        const jsObject = {};
+    
+        const current = array[i];
+        let elements = current.split(',');
+        let dateString = elements[0];
+        let nameString = elements[1];
+        let teamString = elements[2];
+        let valueString = elements[3];
+    
+        jsObject['date'] = stringToDate(dateString);
+        jsObject['name'] = nameString;
+        jsObject['team'] = teamString;
+        jsObject['value'] = parseInt(valueString);
+    
+        dataset.push(jsObject);
+    }
+    
+    function stringToDate(string) {
+        const parts = string.split('-');
+        const myDate = new Date(parts[0], parts[1] - 1, parts[2]);
+        return myDate;
+    }
 }
 
-function stringToDate(string) {
-    const parts = string.split('-');
-    const myDate = new Date(parts[0], parts[1] - 1, parts[2]);
-    return myDate;
-}
 
 // console.log(dataset);
 
@@ -55,5 +57,6 @@ function compounder(arr) {
     }
 }
 
-compoundValues(dataset);
-// console.log(dataset[2179]);
+compundedDataset = compoundValues(dataset);
+
+exports.csvToObjects = csvToObjects;

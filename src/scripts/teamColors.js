@@ -33,3 +33,5 @@ const teamColorCodes = [
     {'team': 'TOT', 'background': '#808080', 'border': '#e31837'},
     {'team': 'SEA', 'background': '#00653A', 'border': '#FFC200'}
 ]
+
+module.exports = teamColors;
