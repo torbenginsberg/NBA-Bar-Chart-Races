@@ -2,5 +2,5 @@ import racingChart from './scripts/racingChart'
 
 document.addEventListener('DOMContentLoaded', () => {
     let chart = new racingChart();
-    // setInterval(chart.updateChart, 1000);
+    setInterval(chart.updateChart.bind(chart), 1000);
 })

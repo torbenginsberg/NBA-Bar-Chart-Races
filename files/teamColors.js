@@ -1,4 +1,4 @@
-const teamColorCodes = [
+export default [
     {'team': 'MIA', 'background': '#98002e', 'border': '#f9a01b'},
     {'team': 'BOS', 'background': '#007a33', 'border': '#ba9653'},
     {'team': 'BRK', 'background': '#000000', 'border': '#ffffff'},
@@ -9,6 +9,7 @@ const teamColorCodes = [
     {'team': 'IND', 'background': '#002d62', 'border': '#fdbb30'},
     {'team': 'MIL', 'background': '#00471b', 'border': '#eee1c6'},
     {'team': 'NOP', 'background': '#0c2340', 'border': '#c8102e'},
+    {'team': 'NOH', 'background': '#0c2340', 'border': '#c8102e'},
     {'team': 'OKC', 'background': '#007ac1', 'border': '#ef3b24'},
     {'team': 'PHI', 'background': '#006bb6', 'border': '#ed174c'},
     {'team': 'SAC', 'background': '#5a2d81', 'border': '#63727a'},
@@ -33,5 +34,3 @@ const teamColorCodes = [
     {'team': 'TOT', 'background': '#808080', 'border': '#e31837'},
     {'team': 'SEA', 'background': '#00653A', 'border': '#FFC200'}
 ]
-
-module.exports = teamColors;

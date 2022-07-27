@@ -1,7 +1,3 @@
-// const fs = require('fs'); // inbuilt method used to read a file into buffer; File System Module
-// let currentDataset = csvToObjects('../../files/points.csv');
-
-// const fs = require('fs');
 import pointsArray from "../../files/points";
 
 export default {

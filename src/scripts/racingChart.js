@@ -1,4 +1,5 @@
 import dataFunctionsObj from './dataSetup';
+import teamColors from "../../files/teamColors";
 
 class racingChart {
     constructor() {
@@ -6,16 +7,20 @@ class racingChart {
         this.labels = ['LeBron James', 'Kevin Durant', 'Kawhi Leonard', 'Luka Dončić', 'Nikola Jokić', 'Joel Embiid', 'Anthony Davis', 'LaMelo Ball'];
         this.data = dataFunctionsObj.getDataForPlayers(this.labels);
         this.chartLabel = 'Points';
-        this.backgroundColors = this.getBackgroundColors(this.labels);
-        this.drawChart();
+        this.backgroundColors = this.getColors(this.labels, 'background');
+        this.borderColors = this.getColors(this.labels, 'border');
+        this.myConfig = this.getConfig();
+        this.drawChart(this.myConfig);
     }
 
-    getBackgroundColors(players) {
+    getColors(players, type) {
       let colorCodes = [];
       for(let i=0; i < players.length; i++) {
-        let teamCode = dataFunctionsObj.getTeam(players[0]);
+        let teamCode = dataFunctionsObj.getTeam(players[i]);
+        let currentObj = teamColors.find(ele => ele['team'] === teamCode);
+        colorCodes.push(currentObj[type]);
       }
-      
+      return colorCodes;
     }
 
     getPoints(year) {
@@ -29,32 +34,21 @@ class racingChart {
       return points;
     }
 
-    drawChart() {
+    drawChart(config) {
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+    }
+
+    getConfig() {
       const data = {
         labels: this.labels,
         datasets: [{
           label: this.chartLabel, // label will need to change dynamically if I end up putting in multiple graph options
           data: this.getPoints(this.year), // the starting data point will be index 0 from the playerValuesEachYear function
-          backgroundColor: [    //both backgroundColor and borderColor will be auto determined by the playerObj team value, referencing TeamColors file
-            '#860038',
-            '#000000',
-            '#C8102E',
-            '#00538C',
-            '#0E2240',
-            '#006BB6',
-            '#552583',
-            '#1d1160'
-          ],
-          borderColor: [
-            '#041E42',
-            '#FFFFFF',
-            '#1D428A',
-            '#002B5E',
-            '#FEC524',
-            '#ED174C',
-            '#FDB927',
-            '00788c'
-          ],
+          backgroundColor: this.backgroundColors,
+          borderColor: this.borderColors,
           borderWidth: 2
         }]
       };
@@ -72,10 +66,7 @@ class racingChart {
         }
       };
 
-      const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-      );
+      return config;
     }
 
     updateChart() {
