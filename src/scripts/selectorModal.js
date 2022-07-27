@@ -26,15 +26,9 @@ class selectorModalSetup {
             that.modalBg.classList.remove('bg-active');
         });
         
-        document.querySelector('.select-field').addEventListener('click', () => {
-            document.querySelector('.list').classList.toggle('show');
-            document.querySelector('.down-arrow').classList.toggle('rotate180');
-        })
-        
-        this.selectorField.addEventListener('click', function () {
+        this.downArrow.addEventListener('click', function () {
             that.playerList.classList.toggle('show-dropdown');
             that.downArrow.classList.toggle('rotate180');
-            that.playerSearchBar.classList.toggle('show-search-box');
         })
 
         this.playerSearchBar.addEventListener('keyup', function(e) {

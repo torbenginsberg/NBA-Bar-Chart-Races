@@ -8,5 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let chart = new racingChart(checkedPlayers);
         let updateIntervalID = setInterval(chart.updateChart.bind(chart), 500);
         selectorModal.modalBg.classList.remove('bg-active');
+        selectorModal.modalBtn.addEventListener('click', () => {
+            chart.myChart.destroy();
+            clearInterval(updateIntervalID);
+        })
     })
 })

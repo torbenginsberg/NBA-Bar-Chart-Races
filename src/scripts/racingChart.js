@@ -19,6 +19,7 @@ class racingChart {
       for(let i=0; i < players.length; i++) {
         let teamCode = dataFunctionsObj.getTeam(players[i]);
         let currentObj = teamColors.find(ele => ele['team'] === teamCode);
+        console.log(teamCode);
         colorCodes.push(currentObj[type]);
       }
       return colorCodes;

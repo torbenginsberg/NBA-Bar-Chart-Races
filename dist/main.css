@@ -7,6 +7,15 @@
   font-family: sans-serif;
 }
 
+.page-header {
+  padding-top: 40px;
+  padding-bottom: 0;
+  text-align: center;
+  background: #17408B;
+  color: white;
+  font-size: 24px;
+}
+
 .chartMenu {
   width: 100vw;
   height: 40px;
@@ -22,7 +31,7 @@
 .chartCard {
   width: 100vw;
   height: calc(100vh - 40px);
-  background: rgb(23, 64, 139);
+  background: #17408B;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,11 +48,11 @@
 
 .toggles {
   width: 700px;
-  background: rgb(23, 64, 139);
-  margin-bottom: 20px;
+  background: #17408B;
+  margin-top: 20px;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-btn {
@@ -90,7 +99,7 @@
 
 .modal button {
   padding: 10px 30px;
-  background-color: blue;
+  background-color: #17408B;
   color: white;
   border: none;
   font-size: 14px;
@@ -107,9 +116,25 @@
   cursor: pointer;
 }
 
+.select-chart-params {
+  position: relative;
+  background-color: white;
+  width: 40%;
+  height: 75%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
 .input-selector {
   outline: none;
   border: none;
+}
+
+.year-selectors {
+  width: max-content;
+  position: relative;
 }
 
 .player-selector {

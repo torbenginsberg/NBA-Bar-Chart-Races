@@ -8,12 +8,15 @@
     <title>NBA Bar Chart Races</title>
   </head>
   <body>
+    <header class="page-header">
+      <!-- <img src="/files/NBA Bar Chart Races-1.png" alt=""> -->
+    </header>
     <div class="chartCard">
-      <div class="toggles">
-        <button class="modal-btn">New Chart</button>
-      </div>
       <div class="chartBox">
         <canvas id="myChart"></canvas>
+      </div>
+      <div class="toggles">
+        <button class="modal-btn">New Chart</button>
       </div>
     </div>
 
@@ -21,16 +24,47 @@
       <div class="modal">
         <h2>Create Your Chart</h2>
         <div class="select-chart-params">
+
+          <div class="year-selectors">
+            <div class="year-select-field">
+              <form action="#">
+                <label>Start Year:
+                  <input type="number" min="2000" max="2022" class="year-input">
+                </label>
+  
+                <label>End Year:
+                  <input type="number" min="2000" max="2022" class="year-input">
+                </label>
+              </form>
+            </div>
+          </div>
+
+          <div class="stat-selector">
+            <label class="stats-label">
+              Statistic:
+              <input type="radio" name="" id="">
+            </label>
+          </div>
+
           <div class="player-selector">
 
-
             <div class="select-field">
-              <input type="text" name="" placeholder="Select players" id="" class="input-selector">
+              <input type="text" name="" placeholder="Select Players" id="" class="input-selector">
               <span class="down-arrow">&blacktriangledown;</span>
             </div>
 
             <div class="list" id="parent-list"></div>
           </div>
+
+          <div class="year-selector">
+            <div class="start-year-selector">
+
+            </div>
+            <div class="end-year-selector">
+
+            </div>
+          </div>
+
         </div>
         <button class="lets-race">Let's Race!</button>
         <span class="modal-close">x</span>
