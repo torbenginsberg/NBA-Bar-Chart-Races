@@ -1,62 +1,83 @@
-const fs = require('fs'); // inbuilt method used to read a file into buffer; File System Module
+// const fs = require('fs'); // inbuilt method used to read a file into buffer; File System Module
+// let currentDataset = csvToObjects('../../files/points.csv');
 
-const csvToObjects = (csv) => {
-    csv = fs.readFileSync('../../files/points.csv');
-    const array = csv.toString().split('\n');
-    const convertedArr = [];
-    
-    let dataset = [];
-    
-    for(let i = 1; i < array.length; i++) {
-        const jsObject = {};
-    
-        const current = array[i];
-        let elements = current.split(',');
-        let dateString = elements[0];
-        let nameString = elements[1];
-        let teamString = elements[2];
-        let valueString = elements[3];
-    
-        jsObject['date'] = stringToDate(dateString);
-        jsObject['name'] = nameString;
-        jsObject['team'] = teamString;
-        jsObject['value'] = parseInt(valueString);
-    
-        dataset.push(jsObject);
-    }
-    
-    function stringToDate(string) {
-        const parts = string.split('-');
-        const myDate = new Date(parts[0], parts[1] - 1, parts[2]);
-        return myDate;
-    }
-}
+// const fs = require('fs');
+import pointsArray from "../../files/points";
 
-
-// console.log(dataset);
-
-function compoundValues(dataset) {
-    let compoundedNames = [];
-    for(let i = 0; i < dataset.length; i++) {
-        let currentObj = dataset[i];
-        let currentName = currentObj['name'];
-        if (!compoundedNames.includes(currentName)) {
-            let filtered = dataset.filter(obj => obj['name'] === currentName);
-            compounder(filtered);
-            compoundedNames.push(currentName);
+export default {
+    csvToObjects(dataArray) {
+        let dataset = [];
+        for(let i = 0; i < dataArray.length; i++) {
+            const jsObject = {};
+        
+            const current = dataArray[i];
+            let elements = current.split(',');
+            let dateString = elements[0];
+            let nameString = elements[1];
+            let teamString = elements[2];
+            let valueString = elements[3];
+        
+            jsObject['year'] = stringToYear(dateString);
+            jsObject['name'] = nameString;
+            jsObject['team'] = teamString;
+            jsObject['value'] = parseInt(valueString);
+        
+            dataset.push(jsObject);
         }
+        
+        function stringToYear(string) {
+            const parts = string.split('-');
+            const part = parts[0];
+            const myYear = parseInt(part);
+            return myYear;
+        }
+    
+        return dataset;
+    },
+    finalSum(playerName) {
+        let currentDataset = csvToObjects(pointsArray);
+        let filtered = currentDataset.filter(obj => obj['name'] === playerName);
+        let total = 0;
+        for(let i=0; i < filtered.length; i++) {
+            let currentObj = filtered[i];
+            let currentValue = currentObj['value'];
+            total += currentValue;
+        }
+        return total;
+    },
+
+    getDataForPlayers(players) {
+        let dataObject = {};
+        let object = this;
+        players.forEach(function(currentPlayer) {
+            dataObject[currentPlayer] = object.playerValuesEachYear(currentPlayer);
+        })
+        return dataObject;
+    },
+
+    playerValuesEachYear(playerName) {
+        let currentDataset = this.csvToObjects(pointsArray);
+        let values = {};
+        let filtered = currentDataset.filter(obj => obj['name'] === playerName);
+        for(let y=2000; y < 2022; y++) {
+            let currentObj = filtered.find(ele => ele['year'] === y);
+            if(currentObj) {
+                values[y] = currentObj['value'];
+            } else {
+                values[y] = 0;
+            }
+        }
+        return values;
+    },
+
+    getTeam(playerName) {
+        let currentDataset = this.csvToObjects(pointsArray);
+        let playerObj = currentDataset.find(ele => ele['name'] === playerName);
+        return playerObj['team'];
     }
 }
 
-function compounder(arr) {
-    for(let i = 0; i < arr.length - 1; i++) {
-        let current = arr[i];
-        let next = arr[i + 1];
-
-        next['value'] += current['value'];
-    }
-}
-
-compundedDataset = compoundValues(dataset);
-
-exports.csvToObjects = csvToObjects;
+// console.log(getDataForPlayers(['LeBron James', 'Kevin Durant', 'Kobe Bryant']))
+// console.log(finalSum('LeBron James'));
+// console.log(playerValuesEachYear('LeBron James'))
+// console.log(csvToObjects(pointsArray));
