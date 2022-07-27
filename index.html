@@ -22,16 +22,50 @@
 
     <div class="modal-bg">
       <div class="modal">
-        <h2>Select Players</h2>
-        <div class="select-players">
-          <form action=""></form>
+        <h2>Create Your Chart</h2>
+        <div class="select-chart-params">
+          <div class="player-selector">
+
+
+            <div class="select-field">
+              <input type="text" name="" placeholder="Select players" id="" class="input-selector">
+              <span class="down-arrow">&blacktriangledown;</span>
+            </div>
+
+            <div class="list">
+
+              <label for="player1" class="player">
+                <input type="checkbox" name="" id="player1">
+                Player 1
+                <span>team</span>
+              </label>
+              <label for="player2" class="player">
+                <input type="checkbox" name="" id="player2">
+                Player 2
+                <span>team</span>
+              </label>
+              <label for="player3" class="player">
+                <input type="checkbox" name="" id="player3">
+                Player 3
+                <span>team</span>
+              </label>
+              <label for="player4" class="player">
+                <input type="checkbox" name="" id="player4">
+                Player 4
+                <span>team</span>
+              </label>
+
+            </div>
+
+
+          </div>
         </div>
-        <button>Let's Race!</button>
+        <button class="lets-race">Let's Race!</button>
         <span class="modal-close">x</span>
       </div>
     </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./src/scripts/modal.js">
+    <script src="./src/scripts/selectorModal.js">
       
     // const labels = ['LeBron James', 'Kevin Durant', 'Kawhi Leonard', 'Luka Doncic', 'Nikola Jokic', 'Joel Embiid', 'Anthony Davis', 'LaMelo Ball'];
     // const data = {

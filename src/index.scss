@@ -74,8 +74,8 @@
 .modal {
     position: relative;
     background-color: white;
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 75%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -99,4 +99,60 @@
     right: 10px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.input-selector {
+    outline: none;
+    border: none;
+}
+
+.player-selector {
+    width: max-content;
+}
+
+.select-field {
+    border: 1px solid black;
+}
+
+.select-field,.player,.list {
+    width: 100%;
+    background-color: white;
+    padding: 0.3rem;
+}
+
+.list {
+    box-shadow: 0 30px 60px rgb(0, 0, 0, 0.2);
+    display: none;
+}
+
+.down-arrow {
+    font-size: 1.2rem;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.player {
+    display: block;
+    padding-left: 0;
+}
+
+.player span {
+    float: right;
+    font-size: 0.6rem;
+    padding-top: 6px;
+}
+
+.player:hover {
+    background-color: aliceblue;
+}
+
+.show-dropdown {
+    display: block;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.rotate180 {
+    transform: rotate(180deg);
 }
