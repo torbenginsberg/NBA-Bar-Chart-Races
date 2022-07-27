@@ -8,14 +8,31 @@
     <title>NBA Bar Chart Races</title>
   </head>
   <body>
+    <!-- <div class="toggles">
+      <button class="modal-btn">New Chart</button>
+    </div> -->
     <div class="chartCard">
+      <div class="toggles">
+        <button class="modal-btn">New Chart</button>
+      </div>
       <div class="chartBox">
         <canvas id="myChart"></canvas>
       </div>
     </div>
+
+    <div class="modal-bg">
+      <div class="modal">
+        <h2>Select Players</h2>
+        <div class="select-players">
+          <form action=""></form>
+        </div>
+        <button>Let's Race!</button>
+        <span class="modal-close">x</span>
+      </div>
+    </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
- 
+    <script src="./src/scripts/modal.js">
+      
     // const labels = ['LeBron James', 'Kevin Durant', 'Kawhi Leonard', 'Luka Doncic', 'Nikola Jokic', 'Joel Embiid', 'Anthony Davis', 'LaMelo Ball'];
     // const data = {
     //   labels: ['LeBron James', 'Kevin Durant', 'Kawhi Leonard', 'Luka Doncic', 'Nikola Jokic', 'Joel Embiid', 'Anthony Davis', 'LaMelo Ball'],

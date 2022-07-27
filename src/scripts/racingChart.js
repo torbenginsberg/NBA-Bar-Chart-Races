@@ -3,14 +3,16 @@ import teamColors from "../../files/teamColors";
 
 class racingChart {
     constructor() {
-        this.year = 2020;
-        this.labels = ['LeBron James', 'Kevin Durant', 'Kawhi Leonard', 'Luka Dončić', 'Nikola Jokić', 'Joel Embiid', 'Anthony Davis', 'LaMelo Ball'];
+        this.year = 2000;
+        this.trackingYear = parseInt(this.year.toString());
+        this.labels = ['LeBron James', 'Kobe Bryant', 'Kevin Durant', 'Carmelo Anthony', 'Tim Duncan', 'Kevin Garnett', 'Paul Pierce'];
         this.data = dataFunctionsObj.getDataForPlayers(this.labels);
+        console.log(this.data);
         this.chartLabel = 'Points';
         this.backgroundColors = this.getColors(this.labels, 'background');
         this.borderColors = this.getColors(this.labels, 'border');
         this.myConfig = this.getConfig();
-        this.drawChart(this.myConfig);
+        this.myChart = this.drawChart(this.myConfig)
     }
 
     getColors(players, type) {
@@ -39,6 +41,7 @@ class racingChart {
         document.getElementById('myChart'),
         config
       );
+      return myChart;
     }
 
     getConfig() {
@@ -102,7 +105,15 @@ class racingChart {
     // will need to increment the year from 2000 - 2021 at every interval
     // when incrementing, need to update each players value by indexing in the playerValuesEachYear obj for the next year
 
-      // this.update();
+      this.trackingYear += 1;
+      if (this.trackingYear < 2022) {
+        for(let i = 0; i < this.labels.length; i++) {
+          let currentName = this.labels[i];
+          let nextVal = this.data[currentName][`${this.trackingYear}`];
+          dp[lab.indexOf(currentName)] += nextVal;
+        }
+      }
+      this.myChart.update();
     }
 }
 
