@@ -2,12 +2,11 @@ import dataFunctionsObj from './dataSetup';
 import teamColors from "../../files/teamColors";
 
 class racingChart {
-    constructor() {
+    constructor(labels) {
         this.year = 2000;
         this.trackingYear = parseInt(this.year.toString());
-        this.labels = ['LeBron James', 'Kobe Bryant', 'Kevin Durant', 'Carmelo Anthony', 'Tim Duncan', 'Kevin Garnett', 'Paul Pierce'];
+        this.labels = labels;
         this.data = dataFunctionsObj.getDataForPlayers(this.labels);
-        console.log(this.data);
         this.chartLabel = 'Points';
         this.backgroundColors = this.getColors(this.labels, 'background');
         this.borderColors = this.getColors(this.labels, 'border');

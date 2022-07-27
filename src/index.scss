@@ -108,6 +108,7 @@
 
 .player-selector {
     width: max-content;
+    position: relative;
 }
 
 .select-field {
@@ -129,18 +130,11 @@
     font-size: 1.2rem;
     display: inline-block;
     cursor: pointer;
-    transition: 0.2s linear;
 }
 
 .player {
     display: block;
     padding-left: 0;
-}
-
-.player span {
-    float: right;
-    font-size: 0.6rem;
-    padding-top: 6px;
 }
 
 .player:hover {
@@ -150,6 +144,7 @@
 .show-dropdown {
     display: block;
     max-height: 200px;
+    max-width: 175px;
     overflow-y: scroll;
 }
 

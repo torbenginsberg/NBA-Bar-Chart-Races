@@ -70,6 +70,18 @@ export default {
         let currentDataset = this.csvToObjects(pointsArray);
         let playerObj = currentDataset.find(ele => ele['name'] === playerName);
         return playerObj['team'];
+    },
+    getNames() {
+        let names = [];
+        for(let i = 0; i < pointsArray.length; i++) {
+            const current = pointsArray[i];
+            let elements = current.split(',');
+            let nameString = elements[1];
+            if (!names.includes(nameString)) {
+                names.push(nameString)
+            }
+        }
+        return names.sort();
     }
 }
 
