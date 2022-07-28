@@ -127,6 +127,12 @@
     border: none;
 }
 
+.stats-label {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .year-selectors {
     width: max-content;
     position: relative;

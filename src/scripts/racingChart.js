@@ -2,12 +2,14 @@ import dataFunctionsObj from './dataSetup';
 import teamColors from "../../files/teamColors";
 
 class racingChart {
-    constructor(labels) {
-        this.year = 2000;
-        this.trackingYear = parseInt(this.year.toString());
+    constructor(labels, startYear, endYear, targetDataString) {
+        this.startYear = startYear;
+        this.trackingYear = parseInt(this.startYear.toString());
+        this.endYear = endYear;
+        this.targetDataString = targetDataString;
         this.labels = labels;
-        this.data = dataFunctionsObj.getDataForPlayers(this.labels);
-        this.chartLabel = 'Points';
+        this.data = dataFunctionsObj.getDataForPlayers(this.labels, this.targetDataString);
+        this.chartLabel = this.targetDataString;
         this.backgroundColors = this.getColors(this.labels, 'background');
         this.borderColors = this.getColors(this.labels, 'border');
         this.myConfig = this.getConfig();
@@ -17,7 +19,7 @@ class racingChart {
     getColors(players, type) {
       let colorCodes = [];
       for(let i=0; i < players.length; i++) {
-        let teamCode = dataFunctionsObj.getTeam(players[i]);
+        let teamCode = dataFunctionsObj.getTeam(players[i], this.targetDataString);
         let currentObj = teamColors.find(ele => ele['team'] === teamCode);
         console.log(teamCode);
         colorCodes.push(currentObj[type]);
@@ -25,15 +27,15 @@ class racingChart {
       return colorCodes;
     }
 
-    getPoints(year) {
-      let points = [];
+    getValues(year) {
+      let values = [];
       for(let i = 0; i < this.labels.length; i++){
         let currentName = this.labels[i];
         let currentPlayerData = this.data[currentName];
-        let thisYearPoints = currentPlayerData[year];
-        points.push(thisYearPoints);
+        let thisYearValues = currentPlayerData[year];
+        values.push(thisYearValues);
       }
-      return points;
+      return values;
     }
 
     drawChart(config) {
@@ -49,7 +51,7 @@ class racingChart {
         labels: this.labels,
         datasets: [{
           label: this.chartLabel,
-          data: this.getPoints(this.year),
+          data: this.getValues(this.startYear),
           backgroundColor: this.backgroundColors,
           borderColor: this.borderColors,
           borderWidth: 2
@@ -106,7 +108,7 @@ class racingChart {
     // when incrementing, need to update each players value by indexing in the playerValuesEachYear obj for the next year
 
       this.trackingYear += 1;
-      if (this.trackingYear < 2022) {
+      if (this.trackingYear <= this.endYear) {
         for(let i = 0; i < this.labels.length; i++) {
           let currentName = this.labels[i];
           let nextVal = this.data[currentName][`${this.trackingYear}`];

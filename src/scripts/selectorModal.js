@@ -14,6 +14,9 @@ class selectorModalSetup {
         this.setNameSelectors();
         this.allPlayerOptions = document.querySelectorAll('.player');
         this.allPlayerInputs = document.querySelectorAll('.player-input');
+        this.yearInputs = document.querySelectorAll('.year-input');
+        this.statInputs = document.querySelectorAll('.stat-radio');
+        // console.log(this.statInputs[3].id);
     }
 
     addSelectorModalListeners() {
@@ -75,6 +78,23 @@ class selectorModalSetup {
         })
 
         return checkedPlayers;
+    }
+
+    getStartYear() {
+        return parseInt(this.yearInputs[0].value);
+    }
+
+    getEndYear() {
+        return parseInt(this.yearInputs[1].value);
+    }
+
+    getCheckedStat() {
+        for(let i = 0; i < this.statInputs.length; i++) {
+            let currentObj = this.statInputs[i];
+            if (currentObj.checked) {
+                return currentObj.id;
+            }
+        }
     }
 }
 

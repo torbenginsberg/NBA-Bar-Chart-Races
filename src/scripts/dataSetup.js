@@ -1,4 +1,5 @@
 import pointsArray from "../../files/points";
+import reboundsArray from "../../files/rebounds";
 
 export default {
     csvToObjects(dataArray) {
@@ -30,29 +31,18 @@ export default {
     
         return dataset;
     },
-    finalSum(playerName) {
-        let currentDataset = csvToObjects(pointsArray);
-        let filtered = currentDataset.filter(obj => obj['name'] === playerName);
-        let total = 0;
-        for(let i=0; i < filtered.length; i++) {
-            let currentObj = filtered[i];
-            let currentValue = currentObj['value'];
-            total += currentValue;
-        }
-        return total;
-    },
-
-    getDataForPlayers(players) {
+    getDataForPlayers(players, string) {
         let dataObject = {};
         let object = this;
         players.forEach(function(currentPlayer) {
-            dataObject[currentPlayer] = object.playerValuesEachYear(currentPlayer);
+            dataObject[currentPlayer] = object.playerValuesEachYear(currentPlayer, string);
         })
         return dataObject;
     },
 
-    playerValuesEachYear(playerName) {
-        let currentDataset = this.csvToObjects(pointsArray);
+    playerValuesEachYear(playerName, string) {
+        let targetArray = this.getTargetCSV(string); 
+        let currentDataset = this.csvToObjects(targetArray);
         let values = {};
         let filtered = currentDataset.filter(obj => obj['name'] === playerName);
         for(let y=2000; y < 2022; y++) {
@@ -66,15 +56,16 @@ export default {
         return values;
     },
 
-    getTeam(playerName) {
-        let currentDataset = this.csvToObjects(pointsArray);
+    getTeam(playerName, string) {
+        let targetArray = this.getTargetCSV(string);
+        let currentDataset = this.csvToObjects(targetArray);
         let playerObj = currentDataset.find(ele => ele['name'] === playerName);
         return playerObj['team'];
     },
     getNames() {
         let names = [];
-        for(let i = 0; i < pointsArray.length; i++) {
-            const current = pointsArray[i];
+        for(let i = 0; i < reboundsArray.length; i++) {
+            const current = reboundsArray[i];
             let elements = current.split(',');
             let nameString = elements[1];
             if (!names.includes(nameString)) {
@@ -82,10 +73,16 @@ export default {
             }
         }
         return names.sort();
+    },
+    getTargetCSV(string) {
+        if (string === "Points") {
+            return pointsArray;
+        } else if (string === "Rebounds") {
+            return reboundsArray;
+        } else if (string === "Assists") {
+            return pointsArray;
+        } else if (string === "Win Shares") {
+            return pointsArray;
+        }
     }
 }
-
-// console.log(getDataForPlayers(['LeBron James', 'Kevin Durant', 'Kobe Bryant']))
-// console.log(finalSum('LeBron James'));
-// console.log(playerValuesEachYear('LeBron James'))
-// console.log(csvToObjects(pointsArray));
