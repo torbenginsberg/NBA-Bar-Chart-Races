@@ -4,31 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./dist/main.css" />
+    <script src="https://kit.fontawesome.com/96b5697dac.js" crossorigin="anonymous"></script>
     <script src="./dist/main.js"></script>
     <title>NBA Bar Chart Races</title>
   </head>
   <body>
     <nav class="header-nav">
       <div class="header-how-to">
-        <a class="how-to-link" href>About</a>
+        <p class="how-to-link">About</p>
         <a href="https://github.com/torbenginsberg/NBA-Bar-Chart-Races" target="_blank">
-          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-github fa-2x"></i>
         </a>
       </div>
 
       <div class="header-title">
+        <!-- <a href="https://github.com/torbenginsberg/NBA-Bar-Chart-Races" target="_blank">
+          <i class="fa-brands fa-github fa-2x"></i>
+        </a> -->
         <h1 class="title">NBA Bar Chart Races</h1>
       </div>
 
       <div class="header-about-list">
-        <ul>
-          <li class="header-about-item">
-            <a href="https://www.linkedin.com/in/torben-ginsberg-095a77112/" target="_blank">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-          </li>
-          <li class="header-about-item">Built by: Torben Ginsberg</li>
-        </ul>
+        <div class="header-about-item">
+          <a href="https://www.linkedin.com/in/torben-ginsberg-095a77112/" target="_blank">
+            <i class="fa-brands fa-linkedin-in fa-2x"></i>
+          </a>
+          <!-- <p>Built by: Torben Ginsberg</p> -->
+        </div>
+        <div class="header-about-item">
+          <p>Built by: Torben Ginsberg</p>
+        </div>
       </div>
     </nav>
 
@@ -55,11 +60,11 @@
             <div class="year-select-field">
               <form action="#">
                 <label>Start Year:
-                  <input type="number" min="2000" max="2022" class="year-input">
+                  <input type="number" min="2000" max="2021" class="year-input">
                 </label>
   
                 <label>End Year:
-                  <input type="number" min="2000" max="2022" class="year-input">
+                  <input type="number" min="2000" max="2021" class="year-input">
                 </label>
               </form>
             </div>
@@ -107,6 +112,26 @@
         <span class="modal-close">x</span>
       </div>
     </div>
+
+    <div class="about-modal-bg">
+      <div class="about-modal">
+        <h2>ABOUT</h2>
+        <div class="background-info">
+          <p>
+            Welcome to the definitive look at the 21st century of the NBA! Create customizable charts to watch the progression of your favorite players in key statistical categories since the year 2000.
+          </p>
+        </div>
+        <h2>HOW TO USE</h2>
+        <div class="how-to-use-text">
+          <p>1. Click the 'New Chart' button to begin</p>
+          <p>2. Indicate your desired year range (remember, only the 21st century!)</p>
+          <p>3. Select your target statistic</p>
+          <p>4. Customize by mixing and matching your favorite players!</p>
+        </div>
+        <button class="about-modal-close">Close</button>
+      </div>
+    </div>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

@@ -1,8 +1,11 @@
 import { select } from 'd3';
 import racingChart from './scripts/racingChart';
 import selectorModalSetup from './scripts/selectorModal';
+import aboutModal from './scripts/aboutModal';
+
 
 document.addEventListener('DOMContentLoaded', () => {
+    let aboutModal1 = new aboutModal();
     let selectorModal = new selectorModalSetup();
     selectorModal.letsRaceBtn.addEventListener('click', () => {
         let checkedPlayers = selectorModal.getCheckedPlayers();

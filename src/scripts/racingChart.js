@@ -108,7 +108,7 @@ class racingChart {
     // when incrementing, need to update each players value by indexing in the playerValuesEachYear obj for the next year
 
       this.trackingYear += 1;
-      if (this.trackingYear < this.endYear) {
+      if (this.trackingYear <= this.endYear) {
         for(let i = 0; i < this.labels.length; i++) {
           let currentName = this.labels[i];
           let nextVal = this.data[currentName][`${this.trackingYear}`];
@@ -116,6 +116,8 @@ class racingChart {
         }
         this.myChart.update();
         this.incrementYearDisplay();
+      } else {
+        this.showYearsRange();
       }
     }
 
@@ -128,6 +130,13 @@ class racingChart {
       let display = document.querySelector('.year-display-text');
       let parsedInt = parseInt(display.innerText) + 1;
       display.innerText = parsedInt.toString();
+    }
+
+    showYearsRange() {
+      let display = document.querySelector('.year-display-text');
+      let startYearString = this.startYear.toString();
+      let endYearString = this.endYear.toString();
+      display.innerText = startYearString + '-' + endYearString;
     }
 }
 
