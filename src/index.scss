@@ -5,13 +5,57 @@
     font-family: sans-serif;
 }
 
-.page-header {
-    padding-top: 40px;
-    padding-bottom: 0;
-    text-align: center;
-    background: #17408B;
+.header-nav {
     color: white;
-    font-size: 24px;
+    height: 70px;
+    background-color: #17408B;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 2px 2px 2px white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header-nav div {
+    width: 30%;
+}
+
+.header-how-to {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-how-to a {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.how-to-link {
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+}
+
+.title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+.header-about-list ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .chartMenu {
@@ -33,6 +77,23 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.year-display {
+    font-size: 16px;
+    margin-bottom: 8px;
+    visibility: hidden;
+}
+
+.year-display p {
+    font-size: 32px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.year-display-active {
+    visibility: visible;
+}
+
 .chartBox {
     width: 700px;
     padding: 20px;

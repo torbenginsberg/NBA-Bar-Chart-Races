@@ -14,6 +14,7 @@ class racingChart {
         this.borderColors = this.getColors(this.labels, 'border');
         this.myConfig = this.getConfig();
         this.myChart = this.drawChart(this.myConfig)
+        this.createYearDisplay();
     }
 
     getColors(players, type) {
@@ -114,7 +115,19 @@ class racingChart {
           dp[lab.indexOf(currentName)] += nextVal;
         }
         this.myChart.update();
+        this.incrementYearDisplay();
       }
+    }
+
+    createYearDisplay() {
+      let display = document.querySelector('.year-display-text');
+      display.innerText = this.trackingYear;
+    }
+
+    incrementYearDisplay() {
+      let display = document.querySelector('.year-display-text');
+      let parsedInt = parseInt(display.innerText) + 1;
+      display.innerText = parsedInt.toString();
     }
 }
 

@@ -1,3 +1,4 @@
+import { select } from 'd3';
 import racingChart from './scripts/racingChart';
 import selectorModalSetup from './scripts/selectorModal';
 
@@ -17,12 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         selectorModal.modalBtn.addEventListener('click', () => {
             chart.myChart.destroy();
+
             clearInterval(updateIntervalID);
+
             let playerInputs = Array.from(selectorModal.allPlayerInputs);
             let currentChecked = playerInputs.filter(ele => ele.checked);
             currentChecked.forEach(function(ele) {
                 ele.checked = false;
             })
+
+            selectorModal.yearDisplay.classList.toggle('year-display-active');
         })
     })
 })

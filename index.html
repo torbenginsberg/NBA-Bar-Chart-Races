@@ -8,13 +8,39 @@
     <title>NBA Bar Chart Races</title>
   </head>
   <body>
-    <header class="page-header">
-      <!-- <img src="/files/NBA Bar Chart Races-1.png" alt=""> -->
-    </header>
+    <nav class="header-nav">
+      <div class="header-how-to">
+        <a class="how-to-link" href>About</a>
+        <a href="https://github.com/torbenginsberg/NBA-Bar-Chart-Races" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+
+      <div class="header-title">
+        <h1 class="title">NBA Bar Chart Races</h1>
+      </div>
+
+      <div class="header-about-list">
+        <ul>
+          <li class="header-about-item">
+            <a href="https://www.linkedin.com/in/torben-ginsberg-095a77112/" target="_blank">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="header-about-item">Built by: Torben Ginsberg</li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="chartCard">
+      <div class="year-display">
+        <p class="year-display-text"></p>
+      </div>
+
       <div class="chartBox">
         <canvas id="myChart"></canvas>
       </div>
+
       <div class="toggles">
         <button class="modal-btn">New Chart</button>
       </div>

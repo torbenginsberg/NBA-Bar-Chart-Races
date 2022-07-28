@@ -10,6 +10,8 @@ class selectorModalSetup {
         this.downArrow = document.querySelector('.down-arrow');
         this.letsRaceBtn = document.querySelector('.lets-race');
         this.playerSearchBar = document.querySelector('.input-selector');
+        this.yearDisplay = document.querySelector('.year-display');
+        this.yearDisplayPTag = document.querySelector('.year-display-text');
         this.addSelectorModalListeners();
         this.setNameSelectors();
         this.allPlayerOptions = document.querySelectorAll('.player');
@@ -29,13 +31,17 @@ class selectorModalSetup {
             that.modalBg.classList.remove('bg-active');
         });
         
-        this.downArrow.addEventListener('click', function () {
+        this.downArrow.addEventListener('click', function() {
             that.playerList.classList.toggle('show-dropdown');
             that.downArrow.classList.toggle('rotate180');
         })
 
         this.playerSearchBar.addEventListener('keyup', function(e) {
             that.filterList(e.target.value);
+        })
+
+        this.letsRaceBtn.addEventListener('click', function() {
+            that.yearDisplay.classList.toggle('year-display-active');
         })
     }
 

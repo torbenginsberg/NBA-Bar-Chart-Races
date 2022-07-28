@@ -60,8 +60,21 @@ export default {
     getTeam(playerName, string) {
         let targetArray = this.getTargetCSV(string);
         let currentDataset = this.csvToObjects(targetArray);
-        let playerObj = currentDataset.find(ele => ele['name'] === playerName);
-        return playerObj['team'];
+        let filtered = currentDataset.filter(obj => obj['name'] === playerName);
+        let teamCodes = [];
+        filtered.forEach(function(obj) {
+            teamCodes.push(obj['team']);
+        })
+
+        function getMostFrequentTeam(teamCodes) {
+            const hashmap = teamCodes.reduce( (acc, val) => {
+                acc[val] = (acc[val] || 0) + 1;
+                return acc;
+            }, {})
+            return Object.keys(hashmap).reduce((a,b) => hashmap[a] > hashmap[b] ? a : b)
+        }
+
+        return getMostFrequentTeam(teamCodes);
     },
     getNames() {
         let names = [];
