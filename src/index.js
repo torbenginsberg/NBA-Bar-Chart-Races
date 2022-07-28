@@ -1,4 +1,3 @@
-import { select } from 'd3';
 import racingChart from './scripts/racingChart';
 import selectorModalSetup from './scripts/selectorModal';
 import aboutModal from './scripts/aboutModal';

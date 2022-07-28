@@ -1,5 +1,3 @@
-
-
 class aboutModal {
     constructor() {
         this.aboutLink = document.querySelector('.how-to-link');

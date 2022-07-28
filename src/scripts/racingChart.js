@@ -104,9 +104,6 @@ class racingChart {
       this.myConfig.data.datasets[0].backgroundColor = bgc;
       this.myConfig.data.datasets[0].borderColor = bc;
 
-    // will need to increment the year from 2000 - 2021 at every interval
-    // when incrementing, need to update each players value by indexing in the playerValuesEachYear obj for the next year
-
       this.trackingYear += 1;
       if (this.trackingYear <= this.endYear) {
         for(let i = 0; i < this.labels.length; i++) {

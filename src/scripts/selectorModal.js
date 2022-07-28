@@ -18,7 +18,6 @@ class selectorModalSetup {
         this.allPlayerInputs = document.querySelectorAll('.player-input');
         this.yearInputs = document.querySelectorAll('.year-input');
         this.statInputs = document.querySelectorAll('.stat-radio');
-        // console.log(this.statInputs[3].id);
     }
 
     addSelectorModalListeners() {
