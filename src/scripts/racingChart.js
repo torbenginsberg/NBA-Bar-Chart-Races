@@ -21,7 +21,6 @@ class racingChart {
       for(let i=0; i < players.length; i++) {
         let teamCode = dataFunctionsObj.getTeam(players[i], this.targetDataString);
         let currentObj = teamColors.find(ele => ele['team'] === teamCode);
-        console.log(teamCode);
         colorCodes.push(currentObj[type]);
       }
       return colorCodes;
@@ -108,14 +107,14 @@ class racingChart {
     // when incrementing, need to update each players value by indexing in the playerValuesEachYear obj for the next year
 
       this.trackingYear += 1;
-      if (this.trackingYear <= this.endYear) {
+      if (this.trackingYear < this.endYear) {
         for(let i = 0; i < this.labels.length; i++) {
           let currentName = this.labels[i];
           let nextVal = this.data[currentName][`${this.trackingYear}`];
           dp[lab.indexOf(currentName)] += nextVal;
         }
+        this.myChart.update();
       }
-      this.myChart.update();
     }
 }
 

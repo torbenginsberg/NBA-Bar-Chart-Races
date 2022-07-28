@@ -11,13 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let chart = new racingChart(checkedPlayers, startYear, endYear, targetDataString);
 
-        let updateIntervalID = setInterval(chart.updateChart.bind(chart), 500);
+        let updateIntervalID = setInterval(chart.updateChart.bind(chart), 750);
 
         selectorModal.modalBg.classList.remove('bg-active');
-        
+
         selectorModal.modalBtn.addEventListener('click', () => {
             chart.myChart.destroy();
             clearInterval(updateIntervalID);
+            let playerInputs = Array.from(selectorModal.allPlayerInputs);
+            let currentChecked = playerInputs.filter(ele => ele.checked);
+            currentChecked.forEach(function(ele) {
+                ele.checked = false;
+            })
         })
     })
 })

@@ -1,5 +1,6 @@
 import pointsArray from "../../files/points";
 import reboundsArray from "../../files/rebounds";
+import assistsArray from "../../files/assists";
 
 export default {
     csvToObjects(dataArray) {
@@ -80,9 +81,7 @@ export default {
         } else if (string === "Rebounds") {
             return reboundsArray;
         } else if (string === "Assists") {
-            return pointsArray;
-        } else if (string === "Win Shares") {
-            return pointsArray;
+            return assistsArray;
         }
     }
 }
