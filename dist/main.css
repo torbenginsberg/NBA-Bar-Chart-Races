@@ -205,6 +205,14 @@ h2 {
   border: none;
 }
 
+.stats-label > label > input {
+  margin-right: 3px;
+}
+
+.stats-label > label {
+  margin-right: 3px;
+}
+
 .stats-label {
   display: flex;
   justify-content: space-around;
