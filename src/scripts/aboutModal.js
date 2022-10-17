@@ -1,6 +1,6 @@
 class aboutModal {
     constructor() {
-        this.aboutLink = document.querySelector('.how-to-link');
+        this.aboutLink = document.querySelector('.about-link');
         this.aboutModalBG = document.querySelector('.about-modal-bg');
         this.aboutModalClose = document.querySelector('.about-modal-close');
         this.setEventListeners();

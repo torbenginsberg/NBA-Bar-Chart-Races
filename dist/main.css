@@ -1,6 +1,9 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +55,12 @@ a {
 }
 
 .how-to-link {
+  cursor: pointer;
+  text-align: center;
+  margin: auto;
+}
+
+.about-link {
   cursor: pointer;
   text-align: center;
   margin: auto;
@@ -156,13 +165,9 @@ a {
   width: 40%;
   height: 55%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-}
-
-.modal > h2 {
-  margin-top: 30px;
 }
 
 h2 {
@@ -178,7 +183,6 @@ h2 {
   cursor: pointer;
   text-align: center;
   border-radius: 10px;
-  margin-bottom: 30px;
 }
 
 .modal-close {
@@ -195,7 +199,7 @@ h2 {
   width: 40%;
   height: 75%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
@@ -203,14 +207,6 @@ h2 {
 .input-selector {
   outline: none;
   border: none;
-}
-
-.stats-label > label > input {
-  margin-right: 3px;
-}
-
-.stats-label > label {
-  margin-right: 3px;
 }
 
 .stats-label {
@@ -233,7 +229,6 @@ h2 {
 .player-selector {
   width: max-content;
   position: relative;
-  z-index: 10;
 }
 
 .select-field {
@@ -260,8 +255,6 @@ h2 {
 .player {
   display: block;
   padding-left: 0;
-  display: flex;
-  justify-content: space-between;
 }
 
 .player:hover {
@@ -303,13 +296,11 @@ h2 {
   border-radius: 10px;
   background-color: white;
   width: 50%;
-  height: 75%;
+  height: 50%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .about-modal button {
@@ -323,18 +314,19 @@ h2 {
   border-radius: 10px;
 }
 
-.about-section {
-  padding-left: 8%;
-  padding-right: 8%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.background-info {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 90%;
 }
 
-.about-modal-header {
-  padding-bottom: 12px;
-}
-
-.notes-list > li {
-  padding-bottom: 10px;
+.how-to-modal button {
+  padding: 10px 30px;
+  background-color: #17408B;
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
 }

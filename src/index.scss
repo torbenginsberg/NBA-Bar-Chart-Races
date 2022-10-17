@@ -1,10 +1,13 @@
-* {
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+  * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-}
-
-.header-nav {
+  }
+  
+  .header-nav {
     color: white;
     height: 70px;
     background-color: #17408B;
@@ -13,64 +16,72 @@
     justify-content: space-around;
     align-items: center;
     box-shadow: 2px 2px 2px white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.header-nav div {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  .header-nav div {
     width: 30%;
-}
-
-.header-how-to {
+  }
+  
+  .header-how-to {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header-how-to a {
+  }
+  
+  .header-how-to a {
     text-align: center;
-}
-
-.header-about-list {
+  }
+  
+  .header-about-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header-about-list {
+  }
+  
+  .header-about-list {
     text-align: center;
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
     color: inherit;
     display: inline-block;
     width: 100%;
     cursor: pointer;
-}
-
-.how-to-link {
+  }
+  
+  .how-to-link {
     cursor: pointer;
     text-align: center;
     margin: auto;
-}
-
-.title {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .about-link {
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .title {
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 36px;
     text-align: center;
-}
-
-.chartMenu {
+  }
+  
+  .chartMenu {
     width: 100vw;
     height: 40px;
     background: #C9082A;
     color: #C9082A;
-}
-.chartMenu p {
+  }
+  
+  .chartMenu p {
     padding: 10px;
     font-size: 20px;
-}
-.chartCard {
+  }
+  
+  .chartCard {
     width: 100vw;
     height: calc(100vh - 40px);
     background: #17408B;
@@ -78,42 +89,42 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.year-display {
+  }
+  
+  .year-display {
     font-size: 16px;
     margin-bottom: 8px;
     visibility: hidden;
-}
-
-.year-display p {
+  }
+  
+  .year-display p {
     font-size: 32px;
     color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.year-display-active {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  .year-display-active {
     visibility: visible;
-}
-
-.chartBox {
+  }
+  
+  .chartBox {
     width: 700px;
     padding: 20px;
     border-radius: 20px;
     border-color: #C9082A;
     background: white;
-}
-
-.toggles {
+  }
+  
+  .toggles {
     width: 700px;
     background: #17408B;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.modal-btn {
+  }
+  
+  .modal-btn {
     background-color: #C9082A;
     border-radius: 15px;
     border: none;
@@ -122,9 +133,9 @@ a {
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-}
-
-.modal-bg {
+  }
+  
+  .modal-bg {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -137,14 +148,14 @@ a {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
-}
-
-.bg-active {
+  }
+  
+  .bg-active {
     visibility: visible;
     opacity: 1;
-}
-
-.modal {
+  }
+  
+  .modal {
     border-radius: 10px;
     position: relative;
     background-color: white;
@@ -154,13 +165,13 @@ a {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-}
-
-h2 {
+  }
+  
+  h2 {
     font-size: 28px;
-}
-
-.modal button {
+  }
+  
+  .modal button {
     padding: 10px 30px;
     background-color: #17408B;
     color: white;
@@ -169,17 +180,17 @@ h2 {
     cursor: pointer;
     text-align: center;
     border-radius: 10px;
-}
-
-.modal-close {
+  }
+  
+  .modal-close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-weight: bold;
     cursor: pointer;
-}
-
-.select-chart-params {
+  }
+  
+  .select-chart-params {
     position: relative;
     background-color: white;
     width: 40%;
@@ -188,77 +199,77 @@ h2 {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-}
-
-.input-selector {
+  }
+  
+  .input-selector {
     outline: none;
     border: none;
-}
-
-.stats-label {
+  }
+  
+  .stats-label {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.stats-label label {
+  }
+  
+  .stats-label label {
     display: flex;
     padding-left: 5px;
     padding-right: 5px;
-}
-
-.year-selectors {
+  }
+  
+  .year-selectors {
     width: max-content;
     position: relative;
-}
-
-.player-selector {
+  }
+  
+  .player-selector {
     width: max-content;
     position: relative;
-}
-
-.select-field {
+  }
+  
+  .select-field {
     border: 1px solid black;
-}
-
-.select-field,.player,.list {
+  }
+  
+  .select-field, .player, .list {
     width: 100%;
     background-color: white;
     padding: 0.3rem;
-}
-
-.list {
-    box-shadow: 0 30px 60px rgb(0, 0, 0, 0.2);
+  }
+  
+  .list {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
     display: none;
-}
-
-.down-arrow {
+  }
+  
+  .down-arrow {
     font-size: 1.2rem;
     display: inline-block;
     cursor: pointer;
-}
-
-.player {
+  }
+  
+  .player {
     display: block;
     padding-left: 0;
-}
-
-.player:hover {
+  }
+  
+  .player:hover {
     background-color: aliceblue;
-}
-
-.show-dropdown {
+  }
+  
+  .show-dropdown {
     display: block;
     max-height: 200px;
     max-width: 175px;
     overflow-y: scroll;
-}
-
-.rotate180 {
+  }
+  
+  .rotate180 {
     transform: rotate(180deg);
-}
-
-.about-modal-bg {
+  }
+  
+  .about-modal-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -271,14 +282,14 @@ h2 {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
-}
-
-.about-modal-bg-active {
+  }
+  
+  .about-modal-bg-active {
     visibility: visible;
     opacity: 1;
-}
-
-.about-modal {
+  }
+  
+  .about-modal {
     border-radius: 10px;
     background-color: white;
     width: 50%;
@@ -287,9 +298,9 @@ h2 {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-}
-
-.about-modal button {
+  }
+  
+  .about-modal button {
     padding: 10px 30px;
     background-color: #17408B;
     color: white;
@@ -298,10 +309,21 @@ h2 {
     cursor: pointer;
     text-align: center;
     border-radius: 10px;
-}
-
-.background-info {
+  }
+  
+  .background-info {
     padding-left: 5px;
     padding-right: 5px;
     width: 90%;
-}
+  }
+  
+  .how-to-modal button {
+    padding: 10px 30px;
+    background-color: #17408B;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+  }
