@@ -307,3 +307,19 @@ h2 {
     padding-right: 5px;
     width: 90%;
 }
+
+.about-section {
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-modal-header {
+    padding-bottom: 12px;
+  }
+  
+  .notes-list > li {
+    padding-bottom: 10px;
+  }
