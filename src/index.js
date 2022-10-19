@@ -1,10 +1,12 @@
 import racingChart from './scripts/racingChart';
 import selectorModalSetup from './scripts/selectorModal';
 import aboutModal from './scripts/aboutModal';
+import howToModal from './scripts/howToModal';
 
 
 document.addEventListener('DOMContentLoaded', () => {
     let aboutModal1 = new aboutModal();
+    let howToModal1 = new howToModal();
     let selectorModal = new selectorModalSetup();
     selectorModal.letsRaceBtn.addEventListener('click', () => {
         let checkedPlayers = selectorModal.getCheckedPlayers();
