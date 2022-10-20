@@ -5,6 +5,7 @@ class selectorModalSetup {
         this.modalBtn = document.querySelector('.modal-btn');
         this.modalBg = document.querySelector('.modal-bg');
         this.modalClose = document.querySelector('.modal-close');
+        this.welcomeText = document.querySelector('.placeholder-text')
         this.selectorField = document.querySelector('.select-field');
         this.playerList = document.querySelector('.list');
         this.downArrow = document.querySelector('.down-arrow');
@@ -25,6 +26,7 @@ class selectorModalSetup {
         let that = this;
         this.modalBtn.addEventListener('click', function() {
             that.modalBg.classList.add('bg-active');
+            that.welcomeText.style.display = "none";
         });
         
         this.modalClose.addEventListener('click', function() {
