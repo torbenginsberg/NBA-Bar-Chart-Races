@@ -34,4 +34,30 @@ document.addEventListener('DOMContentLoaded', () => {
             selectorModal.yearDisplay.classList.toggle('year-display-active');
         })
     })
+    selectorModal.exampleRaceBtn.addEventListener('click', () => {
+        let checkedPlayers = ['LeBron James', 'Carmelo Anthony', 'Kevin Durant', 'Dwyane Wade', 'Chris Paul', 'Chris Bosh', 'Dwight Howard'];
+        let startYear = 2004;
+        let endYear = 2021;
+        let targetDataString = 'Points';
+
+        let chart = new racingChart(checkedPlayers, startYear, endYear, targetDataString);
+
+        let updateIntervalID = setInterval(chart.updateChart.bind(chart), 750);
+
+        selectorModal.modalBg.classList.remove('bg-active');
+
+        selectorModal.modalBtn.addEventListener('click', () => {
+            chart.myChart.destroy();
+
+            clearInterval(updateIntervalID);
+
+            let playerInputs = Array.from(selectorModal.allPlayerInputs);
+            let currentChecked = playerInputs.filter(ele => ele.checked);
+            currentChecked.forEach(function(ele) {
+                ele.checked = false;
+            })
+
+            selectorModal.yearDisplay.classList.toggle('year-display-active');
+        })
+    })
 })

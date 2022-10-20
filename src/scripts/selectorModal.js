@@ -8,7 +8,8 @@ class selectorModalSetup {
         this.selectorField = document.querySelector('.select-field');
         this.playerList = document.querySelector('.list');
         this.downArrow = document.querySelector('.down-arrow');
-        this.letsRaceBtn = document.querySelector('.lets-race');
+        this.letsRaceBtn = document.querySelector('#my-race');
+        this.exampleRaceBtn = document.querySelector('#example-race');
         this.playerSearchBar = document.querySelector('.input-selector');
         this.yearDisplay = document.querySelector('.year-display');
         this.yearDisplayPTag = document.querySelector('.year-display-text');
@@ -41,6 +42,10 @@ class selectorModalSetup {
 
         this.letsRaceBtn.addEventListener('click', function() {
             that.yearDisplay.classList.toggle('year-display-active');
+        })
+
+        this.exampleRaceBtn.addEventListener('click', function() {
+            that.yearDisplay.classList.toggle('year-display-active')
         })
     }
 
