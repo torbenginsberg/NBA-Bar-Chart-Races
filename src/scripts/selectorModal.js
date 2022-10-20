@@ -61,7 +61,6 @@ class selectorModalSetup {
         names.forEach( name => {
             let newLabel = document.createElement('label');
             newLabel.classList.add('player');
-            newLabel.innerText = name;
 
             let parentList = document.getElementById('parent-list');
             parentList.append(newLabel);
@@ -70,6 +69,7 @@ class selectorModalSetup {
             newInput.setAttribute('type', 'checkbox');
             newInput.classList.add('player-input');
             newLabel.append(newInput);
+            newInput.insertAdjacentText('afterend', name);
         })
     }
 
