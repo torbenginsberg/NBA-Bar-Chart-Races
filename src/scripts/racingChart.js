@@ -75,8 +75,8 @@ class racingChart {
     }
 
     updateChart() {
-      let merged = this.labels.map(function(label, i) {
-        
+      // for each label, convert it to an object with the specific label, data, and colors
+      let merged = this.labels.map(function(label, i) { 
         return {
             'labels': this.myConfig.data.labels[i],
             'dataPoints': this.myConfig.data.datasets[0].data[i],
@@ -85,36 +85,40 @@ class racingChart {
         }
       }, this)
       
+      // we now want to create a new array based on the values of our object, but sorted
       const lab = [];
       const dp = [];
       const bgc = [];
       const bc = [];
-      const dataSort = merged.sort((b, a) => {
-          return a.dataPoints - b.dataPoints
+      const dataSort = merged.sort((b, a) => { 
+          return a.dataPoints - b.dataPoints // javascript sorting function
       });
 
+      // iterate through our sorted array and push into our empty arrays in the proper sorted order
       for(let i = 0; i < dataSort.length; i++){
           lab.push(dataSort[i].labels);
           dp.push(dataSort[i].dataPoints);
           bgc.push(dataSort[i].backgroundColor);
           bc.push(dataSort[i].borderColor);
       }
+
       this.myConfig.data.labels = lab;
       this.myConfig.data.datasets[0].data = dp;
       this.myConfig.data.datasets[0].backgroundColor = bgc;
       this.myConfig.data.datasets[0].borderColor = bc;
+      // setting all of the new data points sorted on my chart with our temporary arrays
 
-      this.trackingYear += 1;
+      this.trackingYear += 1; // increment
       if (this.trackingYear <= this.endYear) {
         for(let i = 0; i < this.labels.length; i++) {
-          let currentName = this.labels[i];
-          let nextVal = this.data[currentName][`${this.trackingYear}`];
-          dp[lab.indexOf(currentName)] += nextVal;
+          let currentName = this.labels[i]; // find the name of the current player
+          let nextVal = this.data[currentName][`${this.trackingYear}`]; // find the next year's total
+          dp[lab.indexOf(currentName)] += nextVal; // increment the player's value. need to use index of label name
         }
-        this.myChart.update();
-        this.incrementYearDisplay();
+        this.myChart.update(); // built in Chartjs method. applies the updates
+        this.incrementYearDisplay(); // increment our year display
       } else {
-        this.showYearsRange();
+        this.showYearsRange(); // chart is done, show our whole year range
       }
     }
 
