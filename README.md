@@ -1,5 +1,7 @@
 # NBA-Bar-Chart-Races
 
+Live Link: https://torbenginsberg.github.io/NBA-Bar-Chart-Races/
+
 ## Background
 
 Welcome to my NBA Bar Chart Races application! This app is designed for anyone with an interest in fun data visualizations (though NBA fans might get the most out of it!)
